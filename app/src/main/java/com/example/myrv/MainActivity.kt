@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
         var cnt: Int = 1
         binding.addButton.setOnClickListener {
-            Constant.addItem(ItemData(R.drawable.diet, "$cnt samose walii", "clggg"))
+            Constant.addItem(ItemData(R.drawable.diet, "$cnt samose walaa", "clggg"))
             cnt++
             //binding.recycle1.adapter?.notifyDataSetChanged()
             // recommended to use the specific method,
