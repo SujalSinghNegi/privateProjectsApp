@@ -1,4 +1,4 @@
 package com.example.myrv
 
 
-data class ItemData(val name:String, val age:Int, val email: String)
+data class ItemData(val image:Int, val name:String, val address: String)
