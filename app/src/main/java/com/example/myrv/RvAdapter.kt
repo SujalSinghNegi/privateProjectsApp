@@ -2,6 +2,7 @@ package com.example.myrv
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myrv.databinding.RvItemLayoutBinding
 
@@ -10,6 +11,7 @@ class RvAdapter (val userList: ArrayList<ItemData>):RecyclerView.Adapter<RvAdapt
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
+
         val itemBinding=RvItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(itemBinding)
     }
@@ -18,10 +20,12 @@ class RvAdapter (val userList: ArrayList<ItemData>):RecyclerView.Adapter<RvAdapt
         holder: ViewHolder,
         position: Int
     ) {
-        holder.binding.rvText.text=userList[position].name
-        holder.binding.rvAge.text=userList[position].age.toString()
-        holder.binding.rvEmail.text=userList[position].email
-
+        holder.binding.profile.setImageResource(userList[position].image)
+        holder.binding.name.text=userList[position].name
+        holder.binding.address.text=userList[position].address
+        holder.itemView.setOnClickListener {
+            Toast.makeText(holder.itemView.context,userList[position].name,Toast.LENGTH_SHORT).show()
+        }
       holder.bind(userList[position])
 
     }
@@ -32,9 +36,9 @@ class RvAdapter (val userList: ArrayList<ItemData>):RecyclerView.Adapter<RvAdapt
 
     inner class ViewHolder(val binding: RvItemLayoutBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(user:ItemData){
-            binding.rvText.text=user.name
-            binding.rvAge.text=user.age.toString()
-            binding.rvEmail.text=user.email
+            binding.profile.setImageResource(user.image)
+            binding.name.text=user.name
+            binding.address.text=user.address
 
         }
     }
