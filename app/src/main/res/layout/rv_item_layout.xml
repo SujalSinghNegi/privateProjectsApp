@@ -9,12 +9,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="5dp">
 
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="133dp"
+            android:layout_width="130dp"
             android:layout_height="0dp"
+            android:maxHeight="200dp"
+            android:maxWidth="200dp"
             android:src="@drawable/diet"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,13 +27,14 @@
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="224dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Restraunt Name"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/profile"
             app:layout_constraintTop_toTopOf="parent"
@@ -44,6 +48,7 @@
             android:layout_marginBottom="8dp"
             android:text="Address"
             android:textSize="14sp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/name"
             app:layout_constraintHorizontal_bias="0.0"
