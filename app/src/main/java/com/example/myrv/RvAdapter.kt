@@ -47,7 +47,7 @@ class RvAdapter (val userList: ArrayList<ItemData>):RecyclerView.Adapter<RvAdapt
     }
     fun anim(view:View){
         var animation = AlphaAnimation(0.0f, 1.0f)
-        animation.duration= 1500
+        animation.duration= 1200
         view.startAnimation(animation)
     }
 }
