@@ -1,7 +1,9 @@
 package com.example.myrv
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myrv.databinding.RvItemLayoutBinding
@@ -20,6 +22,7 @@ class RvAdapter (val userList: ArrayList<ItemData>):RecyclerView.Adapter<RvAdapt
         holder: ViewHolder,
         position: Int
     ) {
+        anim(holder.itemView)
         holder.binding.profile.setImageResource(userList[position].image)
         holder.binding.name.text=userList[position].name
         holder.binding.address.text=userList[position].address
@@ -41,5 +44,10 @@ class RvAdapter (val userList: ArrayList<ItemData>):RecyclerView.Adapter<RvAdapt
             binding.address.text=user.address
 
         }
+    }
+    fun anim(view:View){
+        var animation = AlphaAnimation(0.0f, 1.0f)
+        animation.duration= 1500
+        view.startAnimation(animation)
     }
 }
